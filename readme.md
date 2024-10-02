@@ -12,17 +12,28 @@ The aim of this project is to download, install, and configure Snort to monitor 
 - Network security troubleshooting and identification of malicious activities
 - Understanding of Snort's rule syntax and optimization for better performance
 ## Steps
-## Install Wireshark
-Used the package manager to install Wireshark![Screenshot 2024-09-20 190604](https://github.com/user-attachments/assets/055ccc9e-00b7-4a03-8579-4de12141e3c6)
-##  Launch Wireshark 
- Launched Wireshark by typing the command in the terminal. ![Screenshot 2024-09-20 190629](https://github.com/user-attachments/assets/b284eb3d-3fc4-481a-93d4-c350ba06d75b)
- 
-## Capture Network Traffic
-Started scanning the network. ![Screenshot 2024-09-20 190705](https://github.com/user-attachments/assets/648c06a4-d373-43a0-b0ab-2548eada4491)
-##  Analyze Network Traffic
-Used display filters to focus on specific types of traffic. ![Screenshot 2024-09-20 190805](https://github.com/user-attachments/assets/d663ba24-3cf1-47a1-958f-648b060fa760)
-## Test for HTTP Credentials in Plain Text
-While capturing HTTP traffic, I visited a website that uses HTTP (not HTTPS) for login credentials.![Screenshot 2024-09-20 185031](https://github.com/user-attachments/assets/f11d97eb-d817-4100-8cb6-421693772691)
-In the stream, I inspect the HTTP request to see if the username and password were transmitted in plaintext. If HTTP is used, credentials may be visible directly in the payload wich was proven correctly through wireshark.![Screenshot 2024-09-20 185012](https://github.com/user-attachments/assets/7bf40b1d-b48b-4efc-8136-cc6d03d556bc)
+## Install Snort
+Followed Tutorial found on Snorts website and verified the correct version was installed. ![Screenshot 2024-10-01 200240](https://github.com/user-attachments/assets/649ba0b2-b102-4138-bea1-2cdd9ec43003)
+
+
+##  Configure Snort Rules 
+Downloaded Snorts community rules also found on their website.![Screenshot 2024-10-01 200217](https://github.com/user-attachments/assets/e5cdcc05-20e6-4ef3-87b9-b52082fd963c)
+
+
+
+## Launch Snort
+Ensured there were no errors with the rules i configured and launched snort![Screenshot 2024-10-01 205017](https://github.com/user-attachments/assets/349134d9-d8bb-4f79-a465-c14deef140ca)
+
+
+
+
+## Simulate SYN Flood Attack Using Kali Linux
+Launched a SYN flood attack from Kali Linux, sending large numbers of connection requests to overwhelm the target system.![Screenshot 2024-10-01 205231](https://github.com/user-attachments/assets/9452b661-fdcb-4a78-a3b2-f0088909643e)
+
+
+## Analyze Network Traffic with Snort
+Used Snort’s alert system to verify that the SYN flood attack was identified and logged appropriately. This verified that the intrusion detection system (IDS) was working as expected.![Screenshot 2024-10-01 200523](https://github.com/user-attachments/assets/96e30419-3989-47b3-a866-cb2c89e3d906)
+
+
 ## Conclusion
 In this project, I successfully installed and used Snort as a network intrusion detection system. By applying and modifying Snort rules, I was able to detect and log suspicious activity, specifically a SYN flood attack simulated using Kali Linux. This demonstrated Snort’s ability to monitor, identify, and respond to network-based threats, which is essential for protecting network infrastructure from malicious attacks.
