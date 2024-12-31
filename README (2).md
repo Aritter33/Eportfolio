@@ -3,7 +3,7 @@
 ## Objective
 
 
-To build and configure a firewall on an Ubuntu system using UFW (Uncomplicated Firewall), securing the network from unauthorized access and potential threats.
+To build and configure a firewall on an Ubuntu system using UFW (Uncomplicated Firewall), securing the network from unauthorized access and potential threats
 
 ### Skills Learned/Tools Used
 
