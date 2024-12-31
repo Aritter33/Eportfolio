@@ -36,4 +36,4 @@ Used Snort’s alert system to verify that the SYN flood attack was identified a
 
 
 ## Conclusion
-In this project, I successfully installed and used Snort as a network intrusion detection system. By applying and modifying Snort rules, I was able to detect and log suspicious activity, specifically a SYN flood attack simulated using Kali Linux. This demonstrated Snort’s ability to monitor, identify, and respond to network-based threats, which is essential for protecting network infrastructure from malicious attacks.
+In this project, I successfully installed and used Snort as a network intrusion detection system. By applying and modifying Snort rules, I was able to detect and log suspicious activity, specifically a SYN flood attack simulated using Kali Linux. This demonstrated Snort’s ability to monitor, identify, and respond to network-based threats, which is essential for protecting network infrastructure from malicious attacks
