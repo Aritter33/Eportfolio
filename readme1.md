@@ -1,4 +1,4 @@
- ## Network Traffic Analysis with Wireshark
+ ## Flask Vulnerability Analysis and Security Fixes
 
 ## Objective
 The goal of this project is to develop a vulnerable Flask web application with common security flaws, including Cross-Site Scripting (XSS), SQL Injection, Broken Authentication, Security Misconfigurations, and Cross-Site Request Forgery (CSRF). After building the vulnerable application, we use Bandit, a static code analysis tool for Python, to identify and fix these vulnerabilities. The project demonstrates secure coding practices, vulnerability identification, and remediation techniques.
@@ -22,25 +22,58 @@ The goal of this project is to develop a vulnerable Flask web application with c
 Built a Flask app with several common vulnerabilities:
 
 XSS: User input directly rendered without sanitization.
+
 SQL Injection: Unsanitized user input used in SQL queries.
+
 Broken Authentication: Session management without proper checks.
+
 Security Misconfiguration: Exposed sensitive data like API keys.
+
 CSRF: Vulnerable to CSRF attacks due to lack of protection.
 
+![Screenshot 2024-12-31 155752](https://github.com/user-attachments/assets/116c0722-a1f4-4894-80a0-6b78ab997e0c)
 
-##  Launch Wireshark 
- Launched Wireshark by typing the command in the terminal. ![Screenshot 2024-09-20 190629](https://github.com/user-attachments/assets/b284eb3d-3fc4-481a-93d4-c350ba06d75b)
- 
-## Capture Network Traffic
-Started scanning the network. ![Screenshot 2024-09-20 190705](https://github.com/user-attachments/assets/648c06a4-d373-43a0-b0ab-2548eada4491)
 
-##  Analyze Network Traffic
-Used display filters to focus on specific types of traffic. ![Screenshot 2024-09-20 190805](https://github.com/user-attachments/assets/d663ba24-3cf1-47a1-958f-648b060fa760)
+##  2. Install Bandit and Run Security Analysis
+Installed Bandit to scan Python files for security issues.
 
-## Test for HTTP Credentials in Plain Text
-While capturing HTTP traffic, I visited a website that uses HTTP (not HTTPS) for login credentials.![Screenshot 2024-09-20 185031](https://github.com/user-attachments/assets/f11d97eb-d817-4100-8cb6-421693772691)
-In the stream, I inspect the HTTP request to see if the username and password were transmitted in plaintext. If HTTP is used, credentials may be visible directly in the payload wich was proven correctly through wireshark.![Screenshot 2024-09-20 185012](https://github.com/user-attachments/assets/7bf40b1d-b48b-4efc-8136-cc6d03d556bc)
+Ran Bandit to identify vulnerabilities like hardcoded credentials and unsafe coding practices.
+
+Used Bandit’s output to address critical vulnerabilities in the codebase.
+![Screenshot 2024-12-31 152317](https://github.com/user-attachments/assets/68ba095a-0029-4f54-83d3-1ace0ac5efdd)
+
+## 3. Fix Vulnerabilities
+Implemented security measures to fix the vulnerabilities:
+
+XSS: Used Flask’s escape() function to sanitize user inputs.
+
+SQL Injection: Switched to parameterized queries to prevent injection attacks.
+
+Broken Authentication: Implemented secure session management.
+
+Security Misconfiguration: Removed sensitive data from responses and environment variables.
+
+CSRF: Added CSRF protection using Flask’s Flask-WTF extension.
+
+Updated code to fix vulnerabilities
+
+![Screenshot 2024-12-31 160726](https://github.com/user-attachments/assets/35bb9cb8-4292-4461-987b-26ec67038213)
+
+
+##  4. Verify Fixes with Bandit
+After making the necessary changes, I ran Bandit again to verify that the vulnerabilities were fixed and no new vulnerabilities were introduced.
+
+![Screenshot 2024-12-31 152333](https://github.com/user-attachments/assets/3fa3e823-e9b1-4332-b7c8-caba5095071c)
+
+## Created report identifying all vulnerabilities found
+
+ ![Screenshot 2024-12-31 161133](https://github.com/user-attachments/assets/0bc4a0d3-b0d3-4309-b427-2cde8b8a7c0e)
+
+
+
 
 ## Conclusion
 
-In this project, I successfully installed and used Wireshark to capture and analyze network traffic. I learned how to apply filters, inspect individual packets, and follow TCP/UDP streams, developing a strong foundatio
+In this project, I developed a vulnerable Flask application to simulate common web security issues and then applied Bandit to identify and fix those vulnerabilities. By learning to secure applications against XSS, SQL injection, CSRF, and other attacks, I gained hands-on experience with Python web application security.
+
+The project demonstrates the importance of implementing security best practices and using automated tools like Bandit for vulnerability analysis and continuous security improvement.
